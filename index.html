@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Car Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="glass-panel">
+            <h1>Neural Network Car Game</h1>
+            <div class="controls">
+                <button id="start-btn">Start</button>
+                <button id="reset-btn">Reset</button>
+                <button id="train-btn">Train Network</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-container glass-panel">
+                <canvas id="game-canvas"></canvas>
+            </div>
+
+            <div class="neural-network-container glass-panel">
+                <div class="network-header">
+                    <h2>Neural Network Visualization</h2>
+                    <div class="sound-controls">
+                        <button id="sound-toggle" class="icon-button" title="Toggle Sound">
+                            <span class="sound-icon">🔊</span>
+                        </button>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.2">
+                    </div>
+                </div>
+                <canvas id="network-canvas"></canvas>
+                <div class="network-stats">
+                    <div class="stat">
+                        <span>Generation:</span>
+                        <span id="generation-count">0</span>
+                    </div>
+                    <div class="stat">
+                        <span>Best Fitness:</span>
+                        <span id="best-fitness">0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="settings-panel glass-panel">
+            <div class="settings-section">
+                <h2>Settings</h2>
+                <div class="setting">
+                    <label for="mutation-rate">Mutation Rate:</label>
+                    <input type="range" id="mutation-rate" min="0" max="1" step="0.01" value="0.1">
+                    <span id="mutation-rate-value">0.1</span>
+                </div>
+                <div class="setting">
+                    <label for="population-size">Population Size:</label>
+                    <input type="range" id="population-size" min="10" max="100" step="5" value="20">
+                    <span id="population-size-value">20</span>
+                </div>
+                <div class="setting">
+                    <label for="hidden-neurons">Hidden Neurons:</label>
+                    <input type="range" id="hidden-neurons" min="4" max="16" step="1" value="8">
+                    <span id="hidden-neurons-value">8</span>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <h2>Controls</h2>
+                <div class="key-controls">
+                    <div class="key-row">
+                        <div class="key-box">
+                            <div class="key">↑</div>
+                            <span>Accelerate</span>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key-box">
+                            <div class="key">←</div>
+                            <span>Turn Left</span>
+                        </div>
+                        <div class="key-box">
+                            <div class="key">↓</div>
+                            <span>Brake/Reverse</span>
+                        </div>
+                        <div class="key-box">
+                            <div class="key">→</div>
+                            <span>Turn Right</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script src="sound-manager.js"></script>
+    <script src="neural-network.js"></script>
+    <script src="car.js"></script>
+    <script src="game.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
